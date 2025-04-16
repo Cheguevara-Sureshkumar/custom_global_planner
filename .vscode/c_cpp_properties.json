@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ogmen/turtlebot3_ws/install/turtlebot3_fake_node/include/**",
+        "/home/ogmen/turtlebot3_ws/install/turtlebot3_msgs/include/**",
+        "/home/ogmen/turtlebot3_ws/install/turtlebot3_gazebo/include/**",
+        "/home/ogmen/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/include/**",
+        "/home/ogmen/turtlebot3_ws/install/dynamixel_sdk/include/**",
+        "/home/ogmen/oro_ws/install/oro_frontier_exploration_cpp/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/ogmen/dummy_ws/src/custom_global_planner/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
