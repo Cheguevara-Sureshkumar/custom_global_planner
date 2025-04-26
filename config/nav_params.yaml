@@ -53,7 +53,7 @@ bt_navigator:
     global_frame: map 
     robot_base_frame: base_link
     odom_topic: /odom
-    # default_nav_to_pose_bt_xml: "/home/ogmen/dummy_ws/src/custom_global_planner/Behaviour_trees/navigate_to_pose_w_replanning_and_recovery.xml"
+    default_nav_to_pose_bt_xml: "/home/ogmen/dummy_ws/src/custom_global_planner/Behaviour_trees/navigate_to_pose_w_replanning_and_recovery.xml"
     bt_loop_duration: 10
     default_server_timeout: 20
     enable_groot_monitoring: True
@@ -306,7 +306,7 @@ planner_server:
     planner_plugins: ["GridBased"]
     GridBased:
       plugin: "custom_global_planner::CustomGlobalPlanner"
-      planner_type: "DIJKSTRA"
+      planner_type: "ACO"
       allow_unknown: false
 
 planner_server_rclcpp_node:

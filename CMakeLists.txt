@@ -24,6 +24,8 @@ add_library(${PROJECT_NAME} SHARED
   src/custom_global_planner.cpp
   src/a_star.cpp
   src/dijkstra.cpp
+  src/pso.cpp
+  src/aco.cpp
 )
 
 ament_target_dependencies(${PROJECT_NAME}

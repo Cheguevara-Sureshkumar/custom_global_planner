@@ -42,7 +42,7 @@ namespace custom_global_planner
             
             std::unique_ptr<AlgorithmInterface> createPlannerInstance();
             std::unique_ptr<AlgorithmInterface> planner_;
-            enum class PlannerType{ A_STAR, DIJKSTRA};
+            enum class PlannerType{ A_STAR, DIJKSTRA, PSO, ACO};
             rclcpp::Logger logger_{rclcpp::get_logger("CustomGlobalPlanner")};  // Initialize logger
             PlannerType planner_type_{PlannerType::A_STAR};  // Initialize with default
             std::string planner_name_;

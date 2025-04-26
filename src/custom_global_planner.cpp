@@ -5,6 +5,8 @@
 #include <rclcpp/rclcpp.hpp>
 #include "custom_global_planner/a_star.hpp"
 #include "custom_global_planner/dijkstra.hpp"
+#include "custom_global_planner/pso.hpp"
+#include "custom_global_planner/aco.hpp"
 
 
 
@@ -45,6 +47,16 @@ namespace custom_global_planner
             planner_type_ = PlannerType::DIJKSTRA;
             RCLCPP_INFO(logger_, "Using Dijkstra algorithm");
         } 
+        else if(planner_type_str == "PSO")
+        {
+            planner_type_ = PlannerType::PSO;
+            RCLCPP_INFO(logger_, "Using PSO algorithm");
+        }
+        else if(planner_type_str == "ACO")
+        {
+            planner_type_ = PlannerType::ACO;
+            RCLCPP_INFO(logger_, "Using ACO algorithm");
+        }
         else {
             planner_type_ = PlannerType::A_STAR;
             RCLCPP_INFO(logger_, "Using A* algorithm");
@@ -77,7 +89,18 @@ namespace custom_global_planner
         if (planner_type_ == PlannerType::DIJKSTRA) {
             return std::make_unique<Dijkstra>(costmap_, allow_unknown_);
             // return;
-        } else {
+        } 
+        else if (planner_type_ == PlannerType::PSO) 
+        {
+            return std::make_unique<PSO>(costmap_, allow_unknown_);
+            // return;
+        }
+        else if (planner_type_ == PlannerType::ACO) 
+        {
+            return std::make_unique<ACO>(costmap_, allow_unknown_);
+            // return;
+        }
+        else {
             return std::make_unique<AStar>(costmap_, allow_unknown_);
         }
     }
